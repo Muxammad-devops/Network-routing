@@ -1,0 +1,41 @@
+Cisco Packet Tracer – Multi-Routing Lab (EIGRP, OSPF, RIP v2, Static)
+
+This lab demonstrates a multi-domain network built in Cisco Packet Tracer, combining different routing protocols in separate segments: EIGRP, OSPF, RIP v2, and static routing.
+The goal was to practice protocol configuration, IP addressing, VLAN segmentation, and end-to-end connectivity across heterogeneous routing domains.
+
+What’s implemented
+
+Multiple routing domains:
+
+EIGRP segment
+
+OSPF segment
+
+RIP v2 segment
+
+Static routing segment
+
+VLANs on access switches (VLAN 10, 20, 30, 40, 50)
+
+Router-to-router point-to-point links (/32 addressing on interconnects)
+
+Interconnection between routing domains
+
+End-to-end reachability (PC-to-PC across different protocols)
+
+How to use
+
+Open the .pkt file in Cisco Packet Tracer (v8.x recommended).
+After the topology loads, you can verify connectivity with:
+
+ping between hosts in different segments
+
+show ip route on routers to inspect EIGRP / OSPF / RIP / static routes
+
+show ip protocols to confirm routing processes
+
+Notes
+
+This lab was created for learning and practice purposes.
+Each routing domain is isolated and then interconnected to simulate real-world mixed-protocol networks.
+The addressing and design are kept simple to focus on routing behavior and protocol interaction.
