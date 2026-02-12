@@ -1,0 +1,180 @@
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#in
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#no sh
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#ip
+Router(config-if)#ip add
+Router(config-if)#ip address 192.168.10.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#in
+Router(config)#interface f
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#no sh
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#ip ad
+Router(config-if)#ip address 1.1.1.1 255.255.255.255
+Bad mask /32 for address 1.1.1.1
+Router(config-if)#ip address 1.1.1.1 255.255.255.252
+Router(config-if)#exit
+Router(config)#rou
+Router(config)#router ei
+Router(config)#router eigrp 
+% Incomplete command.
+Router(config)#router eigrp ?
+  <1-65535>  Autonomous system number
+Router(config)#router eigrp rou
+Router(config)#router eigrp 100
+Router(config-router)#net
+Router(config-router)#network 1.1.1.1 0.0.0.3
+Router(config-router)#network 1.1.1.1 0.0.0.0
+Router(config-router)#network 192.168.10.1 0.0.0.0
+Router(config-router)#exit
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router ei
+Router(config)#router eigrp 100
+Router(config-router)#net
+Router(config-router)#network 1.1.1.2 0.0.0.0
+Router(config-router)#net
+Router(config-router)#network 2.2.2.1 0.0.0.0
+Router(config-router)#net
+Router(config-router)#network 3.3.3.1 0.0.0.0
+Router(config-router)#exit
+Router(config)#in
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#no shut
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#ip add
+Router(config-if)#ip address 1.1.1.2 255.255.255.252
+Router(config-if)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 100: Neighbor 1.1.1.1 (GigabitEthernet0/1) is up: new adjacency
+
+Router(config-if)#ex
+Router(config)#in
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#no
+Router(config-if)#no sh
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+Router(config-if)#ip
+Router(config-if)#ip add
+Router(config-if)#ip address 2.2.2.1 255.255.255.252
+Router(config-if)#exit
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+ip address 3.3.3.1 255.255.255.252
+Router(config-if)#exit
+Router(config)#do write
+Building configuration...
+[OK]
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#rou
+Router(config)#router ei
+Router(config)#router eigrp 100
+Router(config-router)#exit
+Router(config)#in
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/0
+Router(config-if)#no sh
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#ip add
+Router(config-if)#ip address 2.2.2.2 255.255.255.252
+Router(config-if)#exit
+Router(config)#rout
+Router(config)#router ei
+Router(config)#router eigrp 100
+Router(config-router)#ne
+Router(config-router)#net
+Router(config-router)#network 2.2.2.2 0.0.0.0
+Router(config-router)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 100: Neighbor 2.2.2.1 (GigabitEthernet0/0) is up: new adjacency
+
+Router(config-router)#network 192.168.20.1 0.0.0.0
+Router(config-router)#network 192.168.40.1 0.0.0.0
+Router(config-router)#exit
+Router(config)#in
+% Incomplete command.
+Router(config)#in
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/1.20
+Router(config-subif)#en
+Router(config-subif)#encapsulation d
+Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#ip
+Router(config-subif)#ip add
+Router(config-subif)#no sh
+Router(config-subif)#no shutdown 
+Router(config-subif)#ip add
+Router(config-subif)#ip address 192.168.20.1 255.255.255.0
+Router(config-subif)#exit
+Router(config)#in
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/1
+Router(config-if)#no shut
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/1.20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1.20, changed state to up
+
+Router(config-if)#exit
+Router(config)#in
+Router(config)#interface g
+Router(config)#interface gigabitEthernet 0/1.40
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1.40, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1.40, changed state to up
+
+Router(config-subif)#en
+Router(config-subif)#encapsulation d
+Router(config-subif)#encapsulation dot1Q 40
+Router(config-subif)#ip ad
+Router(config-subif)#ip address 192.168.40.1 255.255.255.0
+Router(config-subif)#exit
+Router(config)#do write
+Building configuration...
+[OK]

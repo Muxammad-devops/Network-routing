@@ -1,0 +1,36 @@
+VLAN 10
+Switch(config-vlan)#name aaa
+Switch(config-vlan)#exit
+Switch(config)#interface ra
+Switch(config)#interface range f
+Switch(config)#interface range fastEthernet 0/2-3
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport m
+Switch(config-if-range)#switchport mode a
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#s
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport 
+Switch(config-if-range)#switchport 
+Switch(config-if-range)#switchport a
+Switch(config-if-range)#switchport access vl
+Switch(config-if-range)#switchport access vlan 10
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport p
+Switch(config-if-range)#switchport port
+Switch(config-if-range)#switchport port-security v
+Switch(config-if-range)#switchport port-security violation re
+Switch(config-if-range)#switchport port-security violation restrict 
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport po
+Switch(config-if-range)#switchport port-security     ma
+Switch(config-if-range)#switchport port-security     mac
+Switch(config-if-range)#switchport port-security     mac-address st
+Switch(config-if-range)#switchport port-security     mac-address sticky 
+Switch(config-if-range)#exit
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#sw
+Switch(config-if)#switchport m
+Switch(config-if)#switchport mode t
+Switch(config-if)#switchport mode trunk 
+Switch(config-if)#
